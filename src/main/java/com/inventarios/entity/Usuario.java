@@ -1,4 +1,4 @@
-package com.inventarios.inventarios.security.models;
+package com.inventarios.entity;
 
 import java.util.ArrayList;
 import java.util.List;

@@ -1,4 +1,4 @@
-package com.inventarios.inventarios.security.models;
+package com.inventarios.entity;
 
 import jakarta.persistence.*;
 
