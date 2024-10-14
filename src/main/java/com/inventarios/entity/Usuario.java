@@ -17,7 +17,7 @@ public class Usuario {
 	private String username;
 	private String password;
 	
-	@ManyToMany(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
+	@ManyToMany(fetch = FetchType.EAGER, cascade = CascadeType.MERGE)
 	@JoinTable(name = "usuarios_roles", joinColumns = @JoinColumn(name = "usuario_id", referencedColumnName = "id_usuario")
 	, inverseJoinColumns = @JoinColumn(name = "role_id", referencedColumnName = "id_role"))
 	private List<Role> roles = new ArrayList<>();
@@ -66,6 +66,12 @@ public class Usuario {
 
 	public void setRoles(List<Role> roles) {
 		this.roles = roles;
+	}
+
+	@Override
+	public String toString() {
+		return "Usuario [idUsuario=" + idUsuario + ", username=" + username + ", password=" + password + ", roles="
+				+ roles + "]";
 	}
 	
 	
