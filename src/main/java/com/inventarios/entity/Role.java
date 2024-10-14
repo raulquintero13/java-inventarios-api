@@ -4,7 +4,7 @@ import jakarta.persistence.*;
 
 @Entity
 @Table(name="role")
-public class Roles {
+public class Role {
 	
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -15,11 +15,11 @@ public class Roles {
 	
 	
 	
-	public Roles() {
+	public Role() {
 		super();
 	}
 	
-	public Roles(Long idRole, String name) {
+	public Role(Long idRole, String name) {
 		super();
 		this.idRole = idRole;
 		this.name = name;

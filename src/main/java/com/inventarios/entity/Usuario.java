@@ -6,7 +6,7 @@ import java.util.List;
 import jakarta.persistence.*;
 
 @Entity
-@Table(name="usuario")
+@Table(name="usuarios")
 public class Usuario {
 	
 	@Id
@@ -20,7 +20,7 @@ public class Usuario {
 	@ManyToMany(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
 	@JoinTable(name = "usuarios_roles", joinColumns = @JoinColumn(name = "usuario_id", referencedColumnName = "id_usuario")
 	, inverseJoinColumns = @JoinColumn(name = "role_id", referencedColumnName = "id_role"))
-	private List<Roles> roles = new ArrayList<>();
+	private List<Role> roles = new ArrayList<>();
 
 	
 	
@@ -28,7 +28,7 @@ public class Usuario {
 		super();
 	}
 
-	public Usuario(Long idUsuario, String username, String password, List<Roles> roles) {
+	public Usuario(Long idUsuario, String username, String password, List<Role> roles) {
 		super();
 		this.idUsuario = idUsuario;
 		this.username = username;
@@ -60,11 +60,11 @@ public class Usuario {
 		this.password = password;
 	}
 
-	public List<Roles> getRoles() {
+	public List<Role> getRoles() {
 		return roles;
 	}
 
-	public void setRoles(List<Roles> roles) {
+	public void setRoles(List<Role> roles) {
 		this.roles = roles;
 	}
 	
